@@ -1,0 +1,111 @@
+:root {
+  --green-rgb: 13 186 7;
+  --primary-rgb: var(--green-rgb);
+}
+
+body {
+  display: grid;
+  place-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.screen {
+  width: 300px;
+  border: 3px solid rgb(var(--primary-rgb) / 80%);
+  aspect-ratio: 10 / 16;
+  border-radius: 1rem;
+  margin: auto;
+
+  overflow: hidden;
+}
+
+.screen .screen-image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  background-image: url(./images/bg1.JPG);
+  background-position: center;
+  filter: brightness(80%);
+  animation: pan-overlay 15s linear infinite;
+  background-color: rgb(var(--primary-rgb) / 15%);
+  position: relative;
+}
+
+.link {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+
+}
+
+.screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+  gap: 4rem;
+  position: relative;
+  z-index: 3;
+  padding-bottom: 6rem;
+  border: 1px solid rgb(var(--primary-rgb) / 50%);
+  border-radius: 0.6rem;
+  height: 100%;
+}
+
+.screen-content img {
+  width: 10rem;
+}
+
+@keyframes pan-overlay {  
+  0% {
+    background-position: 36% 42%;
+    background-size: 200%;
+  }
+  
+  20% {
+    background-position: 30% 35%;
+    background-size: 200%;
+  }
+  
+  20.0001% { /* -- View 2 -- */
+    background-position: 60% 85%;
+    background-size: 500%;
+  }
+  
+  40% {
+    background-position: 49% 81%;
+    background-size: 500%;
+  }
+  
+  40.0001% { /* -- View 3 -- */
+    background-position: 80% 42%;
+    background-size: 300%;
+  }
+  
+  60% {
+    background-position: 84% 33%;
+    background-size: 300%;
+  }
+  
+  60.0001% { /* -- View 4 -- */
+    background-position: 0% 0%;
+    background-size: 300%;
+  }
+  
+  80% {
+    background-position: 15% 4%;
+    background-size: 300%;
+  }
+  
+  80.0001% { /* -- View 5 -- */
+    background-position: 80% 10%;
+    background-size: 300%;
+  }
+  
+  100% {
+    background-position: 72% 14%;
+    background-size: 300%;
+  }
+}
